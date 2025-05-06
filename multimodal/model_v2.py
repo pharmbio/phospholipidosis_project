@@ -27,7 +27,7 @@ class SimpleMergeFusion(nn.Module):
             raise ValueError(f"Unknown simple merge method: {self.method}")
 
 
-### 🔹 Transformer Fusion for Multi-Modal Embeddings
+### Transformer Fusion for Multi-Modal Embeddings
 class TransformerFusion(nn.Module):
     def __init__(self, embed_dim, num_layers=2, num_heads=4, ffn_dim=256, dropout=0.1, agg_mode="cls"):
         """
@@ -126,7 +126,7 @@ class CrossAttentionFusion(nn.Module):
         return fused
 
 
-### 🔹 SMILES Encoder with Support for ChemBERTa, MoL-T5, and GPS+
+### SMILES Encoder with Support for ChemBERTa, MoL-T5, and GPS+
 class SMILESEncoder(nn.Module):
     def __init__(self, model_name="DeepChem/ChemBERTa-77M-MLM", model_type="chemberta", freeze=True):
         super().__init__()
@@ -182,7 +182,7 @@ class SMILESEncoder(nn.Module):
         return from_networkx(graph)
 
 
-### 🔹 MultiModal Model with Transformer Fusion
+### MultiModal Model with Transformer Fusion
 class MultiModalModel(nn.Module):
     def __init__(self, 
                  img_dim, 
