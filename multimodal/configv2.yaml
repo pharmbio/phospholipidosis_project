@@ -1,0 +1,42 @@
+data:
+  smiles_csv: "/home/jovyan/share/data/analyses/PLP/multimodal/data/deepprofiler_SMILES_minmax_significant.csv"
+  image_features_csv: "/home/jovyan/share/data/analyses/PLP/multimodal/data/deepprofiler_features_minmax_significant.csv"
+  smiles_column: "SMILES"
+  label_column: "encoded_label"
+  batch_col: "batch_id"
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+  undersample: True
+
+model:
+  chem_model_name: "DeepChem/ChemBERTa-77M-MLM"
+  chem_model_type: "chemberta"  # Options: "chemberta", "molt5", "gps+"
+  freeze_chem_encoder: True
+  img_dim: 672  # Adjust based on image feature dimensions
+  fused_dim: 128
+  hidden_dim: 32
+  num_heads: 2
+  num_self_attention_layers: 1
+  num_classes: 3
+  task: "classification"
+  mode: "img_only"  # Options: "both", "img_only", "chem_only"
+  fusion_type: "transformer"  # Options: "transformer", "cross_attention" (future extensions)
+  fusion_agg: "cls"  # Aggregation mode: "cls", "mean", "max"
+
+training:
+  epochs: 30
+  learning_rate:  0.0017236577300776825
+  batch_size: 64
+  contrastive_loss_weight: 0.9999684957388821
+  scheduler: True
+  scheduler_type: "cosine"
+  early_stopping: True
+  early_stopping_patience: 15
+  optimizer: "adam"  # Default optimizer, can be adjusted
+  dropout_prob: 0.3  # Regularization parameter
+
+logging:
+  log_interval: 10  # Print logs every X batches
+  save_best_model: True
+  output_dir: "results/"  # Directory for storing logs and models

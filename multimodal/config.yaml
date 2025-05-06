@@ -1,0 +1,33 @@
+data:
+  smiles_csv: "/home/jovyan/share/data/analyses/PLP/multimodal/data/deepprofiler_SMILES_minmax_significant.csv"
+  image_features_csv: "/home/jovyan/share/data/analyses/PLP/multimodal/data/deepprofiler_features_minmax_significant.csv"
+  smiles_column: "SMILES"
+  label_column: "encoded_label"
+  batch_col: "batch_id"
+  test_size: 0.1
+  val_size: 0.2
+  random_state: 42
+  undersample: False
+
+model:
+  chem_model_name: "DeepChem/ChemBERTa-77M-MLM"
+  chem_model_type: "chemberta"
+  freeze_chem_encoder: True
+  img_dim: 672  # Adjust based on your feature set
+  fused_dim: 128
+  hidden_dim: 32
+  num_heads: 2
+  num_self_attention_layers: 1
+  num_classes: 3
+  task: "classification"
+  mode: "both"  # Options: "both", "img_only", "chem_only"
+
+training:
+  epochs: 35
+  learning_rate:  0.0017236577300776825
+  batch_size: 2048
+  contrastive_loss_weight: 0.9999684957388821
+  scheduler: None
+  scheduler_type: "cosine"
+  early_stopping: True
+  early_stopping_patience: 15
