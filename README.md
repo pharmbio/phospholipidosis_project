@@ -19,23 +19,23 @@ This project is under development.
 - `generate_crops.py` — extract and load image crops for CP pipeline  
 - `run_training.nf` — Nextflow wrapper for classification
 
-**/CP** – CellProfiler  
+**/CP** – CellProfiler (Petter)
 - `classification.py`  
 - `generate_crops.py`  
 - `Grit_check.ipynb`  
 - `run_training.nf`  
 
-**/Compounds** – Chemical embeddings & models  
+**/Compounds** – Chemical embeddings & models (Petter + Benjamin) 
 - `compound_classification.py`  
 - `compounds_embedding.ipynb`  
 
-**/DP** – DeepProfiler  
+**/DP** – DeepProfiler (Petter + Benjamin)
 - `DP_exploration.ipynb`  
 - `DP_exploration_conformal.ipynb`  
 - `DP_exploration_conformal_site.ipynb`  
 - `DP_regression.ipynb`  
 
-**/multimodal** – Image + compound fusion  
+**/multimodal** – Image + compound fusion (Benjamin)
 - `dataset.py`  
 - `model.py`, `model_v2.py`  
 - `train.py`  
